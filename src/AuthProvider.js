@@ -22,7 +22,7 @@ export default WrappedComponent =>
             if (account) {
                 getAccessToken().then(accessToken => {
                     if (accessToken) {
-                        console.log(accessToken);
+                        // console.log(accessToken);
                     }
                 });
             } else {

@@ -6,7 +6,6 @@ export const GRAPH_SCOPES = {
     USER_READ: "User.Read"
 };
 
-console.log(process.env);
 const config = {
     auth: {
         clientId: process.env.REACT_APP_MS_AZURE_CLIENT_ID,
@@ -47,7 +46,7 @@ function setTokenRedirectToLocalStorage(req) {
             window.localStorage.setItem("token", response.accessToken);
         })
         .catch(function(error) {
-            console.log("callb error:", error);
+            //
         });
 }
 
