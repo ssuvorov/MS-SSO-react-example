@@ -2,6 +2,8 @@
 
 Flow overview: https://docs.microsoft.com/bs-latn-ba/azure/active-directory/develop/scenario-spa-overview
 
+This repo is based on https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/356b6c14d676120efdfbc4e726e7c737ccbddc41/samples/react-sample-app
+
 The directory contains a sample React single-page application for the `msal` library. This sample is provided to demonstrate how developers can use the `msal` library in a React application and recommended best practices for doing so.
 
 This sample was built using [Create React App](https://github.com/facebook/create-react-app). More info for Create React App can be found [here](./CRA_README.md).
