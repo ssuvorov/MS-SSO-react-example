@@ -83,7 +83,8 @@ export const getAccessToken = async () => {
         const token = window.localStorage.getItem("token");
 
         if (!token) {
-            return await auth.acquireTokenSilent(GRAPH_REQUESTS.LOGIN);
+            const response = await auth.acquireTokenSilent(GRAPH_REQUESTS.LOGIN);
+            return response.accessToken;
         }
 
         return token;
