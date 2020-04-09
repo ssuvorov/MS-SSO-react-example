@@ -11,8 +11,9 @@ const config = {
         clientId: process.env.REACT_APP_MS_AZURE_CLIENT_ID,
         authority: `https://login.microsoftonline.com/common`,
         validateAuthority: true,
+        redirectUri: window.location.origin,
         postLogoutRedirectUri: window.location.origin, // with '/' issue to logout. Must be absolute URI
-        navigateToLoginRequestUrl: false
+        navigateToLoginRequestUrl: true
     }
 };
 

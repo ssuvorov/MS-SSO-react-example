@@ -8,29 +8,19 @@ import {
 } from "react-router-dom";
 
 import AuthProvider from "./AuthProvider";
-import { getAccount } from "./auth-utils";
+import { getAccount } from './auth-utils';
 import "./App.css";
 
 import PublicPage from "./containers/Public";
-import Login from "./containers/Login";
 const ProtectedPage = React.lazy(() => import("./containers/Protected.js"));
-
-const AppContext = React.createContext(null);
 
 const ProtectedRoute = ({ children, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={({ location }) => {
+      render={() => {
         if (!getAccount()) {
-          return (
-            <Redirect
-              to={{
-                pathname: `/login`,
-                state: { from: location.pathname }
-              }}
-            />
-          );
+          return null;
         } else {
           return children;
         }
@@ -67,7 +57,6 @@ function App(props) {
       </section>
       <Switch>
         <Route exact path="/" render={() => "Root"} />
-        <Route exact path="/login" component={Login} />
         <Route exact path="/public" component={PublicPage} />
         <ProtectedRoute exact path="/protected">
           <React.Suspense fallback="...">
